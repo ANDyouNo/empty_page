@@ -42,7 +42,7 @@ elem.addEventListener('mousemove', function (event) {
 });
 
 
-const audio = new Audio('../amogus.mp3')
+const audio = new Audio('./sound/amogus.mp3')
 
 // Кнопки
 const redButton = document.querySelector(".amogus");
