@@ -42,14 +42,14 @@ elem.addEventListener('mousemove', function (event) {
 });
 
 
-// Элементы
-const defaultSound = new Audio(required("../amogus.mp3"));
+const audio = new Audio('../amogus.mp3')
+
 // Кнопки
 const redButton = document.querySelector(".amogus");
 
 // Обработчик кнопки
 redButton.addEventListener("click", () => {
-      const audio = defaultSound.cloneNode();
-      audio.play();
+      const audioPlay = audio.cloneNode();
+      audioPlay.play();
 });
 
