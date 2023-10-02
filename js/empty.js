@@ -61,12 +61,7 @@ const testY = document.querySelector('.y')
 
 
 window.addEventListener('deviceorientation', event => {
-  event.alpha // rotation along the z axis
-  event.beta // rotation along the x axis
-  event.gamma // rotation along the y axis
-  testX.textContent = event.beta
-  testY.textContent = event.gamma
-  console.log(event.gamma)
+
   if (event.gamma === null) {
     elem.addEventListener('mousemove', function (event) {
       // добавляем обработчик события "mousemove"
