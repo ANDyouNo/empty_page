@@ -148,15 +148,9 @@ body {
     position: fixed;
   }
 }
-@-o-viewport {
-  user-zoom: fixed;
-}
-@viewport {
-  user-zoom: fixed;
-}
 .y {
   position: absolute;
-  left: 120px;
+  left: 200px;
   top: 30px;
   color: wheat;
   font-size: 52px;
