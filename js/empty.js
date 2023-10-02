@@ -65,8 +65,8 @@ window.addEventListener('deviceorientation', event => {
 
   stars.forEach((item) => {
     item.style.cssText += `
-    left: ${parseInt(item.dataset.x) + event.gamma / parseInt(item.dataset.coef)}px; 
-    top: ${parseInt(item.dataset.y) + event.beta / parseInt(item.dataset.coef)}px;
+    left: ${parseInt(item.dataset.x) + event.gamma / parseInt(item.dataset.coef) * 2}px; 
+    top: ${parseInt(item.dataset.y) + event.beta / parseInt(item.dataset.coef) * 2}px;
     `
   })
 
