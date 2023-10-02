@@ -57,7 +57,7 @@ const testX = document.querySelector('.x')
 const testY = document.querySelector('.y')
 
 window.addEventListener("devicemotion", (event) => {
-  testX.textContent = `${event.acceleration.x}`
-  testY.textContent = `${event.acceleration.y}`
+  testX.textContent = `${event.rotationRate.x}`
+  testY.textContent = `${event.rotationRate.y}`
 });
 
