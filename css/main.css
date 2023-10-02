@@ -154,7 +154,15 @@ body {
 @viewport {
   user-zoom: fixed;
 }
-.test {
+.y {
+  position: absolute;
+  left: 80px;
+  top: 80px;
+  color: wheat;
+  font-size: 52px;
+}
+
+.x {
   position: absolute;
   left: 30px;
   top: 30px;
