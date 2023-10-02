@@ -60,8 +60,8 @@ window.addEventListener('deviceorientation', event => {
   event.alpha // rotation along the z axis
   event.beta // rotation along the x axis
   event.gamma // rotation along the y axis
-  testX.textContent = `${event.beta}`
-  testY.textContent = `${event.gamma}`
+  testX.textContent = event.beta
+  testY.textContent = event.gamma
 
   stars.forEach((item) => {
     item.style.cssText += `
