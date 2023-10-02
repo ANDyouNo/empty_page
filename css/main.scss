@@ -148,3 +148,15 @@ body {
     transform: rotate(0deg)
   }
 }
+
+
+
+@media (max-width: 767px) {
+  body {
+       position:fixed;
+  }
+}
+
+@viewport {
+  user-zoom: fixed;
+}

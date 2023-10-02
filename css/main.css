@@ -142,4 +142,15 @@ body {
     left: -100px;
     transform: rotate(0deg);
   }
+}
+@media (max-width: 767px) {
+  body {
+    position: fixed;
+  }
+}
+@-o-viewport {
+  user-zoom: fixed;
+}
+@viewport {
+  user-zoom: fixed;
 }/*# sourceMappingURL=main.css.map */
