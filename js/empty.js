@@ -26,20 +26,23 @@ const stars = document.querySelectorAll('.star')
 
 const elem = document.querySelector('body'); // выбираем элемент, на котором будем отслеживать движение мыши
 
-elem.addEventListener('mousemove', function (event) {
-  // добавляем обработчик события "mousemove"
-  const x = event.clientX - (windowWidth / 2); // получаем координату X мыши
-  const y = event.clientY - (windowHeight / 2); // получаем координату Y мыши
+if (isMobile != true) {
+  elem.addEventListener('mousemove', function (event) {
+    // добавляем обработчик события "mousemove"
+    const x = event.clientX - (windowWidth / 2); // получаем координату X мыши
+    const y = event.clientY - (windowHeight / 2); // получаем координату Y мыши
+  
+    stars.forEach((item) => {
+      item.style.cssText += `
+      left: ${parseInt(item.dataset.x) + x / parseInt(item.dataset.coef) / 2}px; 
+      top: ${parseInt(item.dataset.y) + y / parseInt(item.dataset.coef) / 2}px;
+      `
+    })
+  
+    //console.log(`Координаты мыши: x=${x}, y=${y}`); // выводим координаты мыши в консоль
+  });
+}
 
-  stars.forEach((item) => {
-    item.style.cssText += `
-    left: ${parseInt(item.dataset.x) + x / parseInt(item.dataset.coef) / 2}px; 
-    top: ${parseInt(item.dataset.y) + y / parseInt(item.dataset.coef) / 2}px;
-    `
-  })
-
-  //console.log(`Координаты мыши: x=${x}, y=${y}`); // выводим координаты мыши в консоль
-});
 
 
 const audio = new Audio('./sound/amogus.mp3')
@@ -63,6 +66,9 @@ window.addEventListener('deviceorientation', event => {
   event.gamma // rotation along the y axis
   testX.textContent = event.beta
   testY.textContent = event.gamma
+  if (event.gamma != null) {
+    let isMobile = true
+  }
 
   stars.forEach((item) => {
     item.style.cssText += `
