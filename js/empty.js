@@ -64,7 +64,7 @@ if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
 
   stars.forEach((item) => {
     item.style.cssText += `
-    left: ${parseInt(item.dataset.x) + (windowWidth / 40)}px; 
+    left: ${parseInt(item.dataset.x) + (windowWidth / 50)}px; 
     top: ${parseInt(item.dataset.y) + (windowHeight / 50)}px;
     `
   })
