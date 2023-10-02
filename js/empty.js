@@ -56,14 +56,11 @@ redButton.addEventListener("click", () => {
 const testX = document.querySelector('.x')
 const testY = document.querySelector('.y')
 
-window.addEventListener("devicemotion", (event) => {
-  testX.textContent = `${event.rotationRate.x}`
-  
-});
-
 window.addEventListener('deviceorientation', event => {
   event.alpha // rotation along the z axis
   event.beta // rotation along the x axis
   event.gamma // rotation along the y axis
+  testX.textContent = `${event.beta}`
   testY.textContent = `${event.gamma}`
 }, true);
+
