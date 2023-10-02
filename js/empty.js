@@ -58,6 +58,12 @@ const testY = document.querySelector('.y')
 
 window.addEventListener("devicemotion", (event) => {
   testX.textContent = `${event.rotationRate.x}`
-  testY.textContent = `${event.rotationRate.y}`
+  
 });
 
+window.addEventListener('deviceorientation', event => {
+  event.alpha // rotation along the z axis
+  event.beta // rotation along the x axis
+  event.gamma // rotation along the y axis
+  testY.textContent = `${event.gamma}`
+}, true);
