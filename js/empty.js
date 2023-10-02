@@ -62,5 +62,13 @@ window.addEventListener('deviceorientation', event => {
   event.gamma // rotation along the y axis
   testX.textContent = `${event.beta}`
   testY.textContent = `${event.gamma}`
+
+  stars.forEach((item) => {
+    item.style.cssText += `
+    left: ${parseInt(item.dataset.x) + event.beta / parseInt(item.dataset.coef)}px; 
+    top: ${parseInt(item.dataset.y) + event.gamma / parseInt(item.dataset.coef)}px;
+    `
+  })
+
 }, true);
 
