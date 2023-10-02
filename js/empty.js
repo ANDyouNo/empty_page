@@ -60,28 +60,44 @@ const testX = document.querySelector('.x')
 const testY = document.querySelector('.y')
 
 
-window.addEventListener('deviceorientation', event => {
+if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
 
-  if (event.gamma === null) {
-    elem.addEventListener('mousemove', function (event) {
-      // добавляем обработчик события "mousemove"
-      const x = event.clientX - (windowWidth / 2); // получаем координату X мыши
-      const y = event.clientY - (windowHeight / 2); // получаем координату Y мыши
-    
-      stars.forEach((item) => {
-        item.style.cssText += `
-        left: ${parseInt(item.dataset.x) + x / parseInt(item.dataset.coef) / 2}px; 
-        top: ${parseInt(item.dataset.y) + y / parseInt(item.dataset.coef) / 2}px;
-        `
-      })
-    
-      //console.log(`Координаты мыши: x=${x}, y=${y}`); // выводим координаты мыши в консоль
-    });
-  } else {stars.forEach((item) => {
+  stars.forEach((item) => {
     item.style.cssText += `
-    left: ${parseInt(item.dataset.x) + event.gamma / parseInt(item.dataset.coef) * 2}px; 
-    top: ${parseInt(item.dataset.y) + event.beta / parseInt(item.dataset.coef) * 2}px;
+    left: ${parseInt(item.dataset.x)  / parseInt(item.dataset.coef) / 2}px; 
+    top: ${parseInt(item.dataset.y) / parseInt(item.dataset.coef) / 2}px;
     `
-  })}
-}, true);
+  })
+
+} else {
+
+  window.addEventListener('deviceorientation', event => {
+
+    if (event.gamma === null) {
+      elem.addEventListener('mousemove', function (event) {
+        // добавляем обработчик события "mousemove"
+        const x = event.clientX - (windowWidth / 2); // получаем координату X мыши
+        const y = event.clientY - (windowHeight / 2); // получаем координату Y мыши
+      
+        stars.forEach((item) => {
+          item.style.cssText += `
+          left: ${parseInt(item.dataset.x) + x / parseInt(item.dataset.coef) / 2}px; 
+          top: ${parseInt(item.dataset.y) + y / parseInt(item.dataset.coef) / 2}px;
+          `
+        })
+      
+        //console.log(`Координаты мыши: x=${x}, y=${y}`); // выводим координаты мыши в консоль
+      });
+    } else {stars.forEach((item) => {
+      item.style.cssText += `
+      left: ${parseInt(item.dataset.x) + event.gamma / parseInt(item.dataset.coef) * 2}px; 
+      top: ${parseInt(item.dataset.y) + event.beta / parseInt(item.dataset.coef) * 2}px;
+      `
+    })}
+  }, true);
+
+}
+
+
+
 
