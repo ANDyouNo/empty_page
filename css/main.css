@@ -153,4 +153,11 @@ body {
 }
 @viewport {
   user-zoom: fixed;
+}
+.test {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  color: wheat;
+  font-size: 52px;
 }/*# sourceMappingURL=main.css.map */

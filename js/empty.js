@@ -53,3 +53,11 @@ redButton.addEventListener("click", () => {
       audioPlay.play();
 });
 
+const testX = document.querySelector('.x')
+const testY = document.querySelector('.y')
+
+window.addEventListener("devicemotion", (event) => {
+  testX.textContent = `${event.acceleration.x} m/s2`
+  testY.textContent = `${event.acceleration.y} m/s2`
+});
+
