@@ -9,6 +9,7 @@ This experimental page was created to test the ability to capture and interact w
 ### Clicking on the astronaut will produce a loud sound. Make sure your volume is adjusted to a comfortable level to avoid surprises!
 
 ## Usage
+Simply open the github-pages link in the deployments section on the right.
 - On Android devices, tilt or rotate your device to see the gyroscope in action.
 - On desktops, move your mouse around to experience cursor tracking.
 
